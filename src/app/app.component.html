@@ -1,0 +1,40 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:left">
+
+<button (click)="toggleHeading()">Toggle Heading</button>
+<h1 *ngIf="showHeading">{{title}}</h1>
+<button (click)="toggleHeading()">Dashboard</button>
+<button (click)="toggleHeading()">Heroes</button>
+<h2>Top Heroes</h2>
+<ul>
+  <li (click)="toggleHeading()" *ngFor="let hero of heroes">
+    {{ hero.name }}
+  </li>
+</ul>
+
+
+<div>
+<form (ngSubmit)="onSubmit(heroForm)" #heroForm="ngForm">
+  <div class="form-group">
+    <label for="name">Name
+      <input class="form-control" name="name" required>
+    </label>
+  </div>
+  <button type="submit" [disabled]="!heroForm.form.valid">Submit</button>
+</form>
+<div [hidden]="!heroForm.form.valid">
+  {{submitMessage}}
+</div>
+</div>
+
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Name</div>
+      <div class="col-xs-9  pull-left">{{ model.name }}</div>
+    </div>
+    </div>
+
+
+</div>
+

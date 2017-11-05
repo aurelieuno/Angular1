@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+  <nav>
+    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+    <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+  </nav>
+  <router-outlet></router-outlet>
+
+
+<!--
+
+In the above example, the component corresponding to the route specified
+will be placed after the <router-outlet></router-outlet> element when the link is clicked.
+
+ The hero property is an input property
+ the parent AppComponent will tell the child HeroDetailComponent which hero to display
+ by binding its selectedHero to the hero property of the HeroDetailComponent.
+ Putting square brackets around the hero property, to the left of the equal sign (=), makes it the target of a property binding expression.
+ You must declare a target binding property to be an input property. Otherwise, Angular rejects the binding and throws an error. -->

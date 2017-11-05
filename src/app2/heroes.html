@@ -1,0 +1,13 @@
+<h2>My Heroes</h2>
+
+
+<li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+<span>{{hero.id}}</span> <span>{{hero.name}}</span>
+</li>
+
+<hero-detail [hero]="selectedHero" ></hero-detail>
+
+<!-- The hero property is an input property
+ the parent Component will tell the child HeroDetailComponent which hero to display
+ by binding its selectedHero to the hero property of the HeroDetailComponent.
+ Putting square brackets around the hero property, to the left of the equal sign (=), makes it the target of a property binding expression. You must declare a target binding property to be an input property. Otherwise, Angular rejects the binding and throws an error. -->
